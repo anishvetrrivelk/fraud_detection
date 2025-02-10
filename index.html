@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <a href="#" onclick="showTab('home')">🏠 Home</a>
+        <a href="#" onclick="showTab('fraud-detection')">🔍 Fraud Detection</a>
+        <a href="#" onclick="showTab('dashboard')">📊 Dashboard</a>
+        <a href="#" onclick="showTab('about')">ℹ️ About</a>
+        <a href="#" onclick="showTab('contact')">📞 Contact</a>
+    </div>
+
+    <div class="main-content">
+        <div class="navbar">
+            <div>
+                <a href="#">⚙️ Settings</a>
+                <a href="#">🔔 Notifications</a>
+                <a href="#">🔑 Logout</a>
+            </div>
+        </div>
+
+        <div id="home" class="tab-content active">
+            <h2>🏠 Welcome to the Fraud Detection System</h2>
+            <div class="home-content">
+                <p>🔐 Fraud detection is a crucial aspect of financial security in today's digital world. As online
+                    transactions and digital payments continue to rise, the risk of fraudulent activities has also
+                    increased. Organizations, businesses, and individuals face growing challenges in identifying and
+                    preventing financial fraud.
+                </p>
+                <p>
+                    💡 Our AI-powered Fraud Detection System is designed to tackle these challenges by leveraging
+                    advanced machine learning algorithms, real-time analytics, and pattern recognition techniques to
+                    analyze vast amounts of transaction data. The system automatically detects anomalies, flags
+                    suspicious activities, and minimizes the risk of fraud before it can cause damage.
+                </p>
+
+                <div class="features">
+                    <div class="feature-box">
+                        <img src="https://via.placeholder.com/150" alt="AI Analysis">
+                        <p>🤖 AI-Powered Analysis</p>
+                    </div>
+                    <div class="feature-box">
+                        <img src="https://via.placeholder.com/150" alt="Real-Time Detection">
+                        <p>⏳ Real-Time Detection</p>
+                    </div>
+                    <div class="feature-box">
+                        <img src="https://via.placeholder.com/150" alt="Secure Transactions">
+                        <p>🔒 Secure Transactions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dashboard" class="tab-content">
+            <h2>📊 Dashboard</h2>
+            <div class="dashboard-card">✅ Total Transactions: 5,000</div>
+            <div class="dashboard-card">🚨 Fraud Cases Detected: 120</div>
+            <div class="dashboard-card">📈 Detection Accuracy: 98%</div>
+            <div class="dashboard-card">🔍 Pending Reviews: 15</div>
+        </div>
+
+        <div id="fraud-detection" class="tab-content">
+            <h2>🔍 Fraud Detection</h2>
+            <p>📂 Upload transaction records to detect fraudulent activities.</p>
+            <input type="file" id="file-upload" accept=".csv, .xlsx">
+            <button onclick="analyzeFraud()">Analyze</button>
+            <p id="fraud-result"></p>
+        </div>
+
+        <div id="about" class="tab-content">
+            <h2>ℹ️ About</h2>
+            <p>🚀 This system helps in detecting fraudulent transactions using advanced AI algorithms.</p>
+        </div>
+
+        <div id="contact" class="tab-content">
+            <h2>📞 Contact</h2>
+            <p>📧 Reach out to us at <b>support@frauddetection.com</b></p>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            showTab('home');
+        });
+
+        function analyzeFraud() {
+            document.getElementById("fraud-result").textContent = "🔄 Analyzing transactions... (Feature in progress)";
+        }
+    </script>
+</body>
+
+</html>
